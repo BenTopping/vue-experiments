@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import SideBar from "../components/SideBar.vue";
-import FlipClock from "../components/experiments/FlipClock.vue"
+import { ref } from 'vue'
+import SideBar from '../components/SideBar.vue'
+import FlipClockView from './FlipClockView.vue'
+import CodeBlockView from './CodeBlockView.vue'
+
+const components: any = {
+  FlipClockView: FlipClockView,
+  CodeBlockView: CodeBlockView
+}
+let selectedView = ref('FlipClockView')
 </script>
 
 <template>
-  <div class="flex min-h-screen p-4">
-    <SideBar />
-    <div class="w-full">
-      <FlipClock />
+  <div class="flex grow min-h-full p-4 w-full">
+    <SideBar v-model="selectedView" />
+    <div class="flex flex-col px-4 w-full">
+      <component :is="components[selectedView]" />
     </div>
   </div>
 </template>
