@@ -20,17 +20,17 @@ function copy() {
   <div class="flex rounded-md w-full h-full bg-slate-800 text-white p-8 relative">
     <transition name="slide-up">
       <div
-        v-if="copied"
+        v-show="copied"
         class="absolute text-xl right-1/2 translate-x-1/2 top-4 rounded-full bg-slate-600 items-center px-6 p-2"
       >
         <span>Copied</span>
       </div>
     </transition>
     <div class="absolute right-4 top-4">
-      <button class="hover:bg-slate-600 p-4 h-full rounded-md" @click="copy">
+      <button class="hover:bg-slate-800 p-4 h-full rounded-md" @click="copy">
         <!-- Clipboard Tick Icon -->
         <svg
-          v-if="copied"
+          v-show="copied"
           fill="white"
           xmlns="http://www.w3.org/2000/svg"
           height="40"
@@ -49,7 +49,7 @@ function copy() {
         </svg>
         <!-- Clipboard Icon -->
         <svg
-          v-else
+          v-show="!copied"
           fill="white"
           xmlns="http://www.w3.org/2000/svg"
           height="40"
@@ -68,9 +68,8 @@ function copy() {
       </button>
     </div>
     <pre class="w-full">
-            {{ props.code }}
-        </pre
-    >
+      {{ props.code }}
+    </pre>
   </div>
 </template>
 

@@ -9,7 +9,7 @@ import IconScience from './icons/IconScience.vue'
       <div class="flex flex-col gap-y-2">
         <h1 class="text-5xl font-light">Vue Experiments</h1>
         <span class="text-gray-700 text-wrap max-w-lg">
-          A series of drop-in Vue Single-File Components written in typescript and tailwindcss with
+          A series of drop-in Vue Single-File Components written in Typescript and TailwindCSS with
           the aim of finding unique implementations
         </span>
       </div>

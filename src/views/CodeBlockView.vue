@@ -23,7 +23,7 @@ function copy() {
     navigator.clipboard.writeText(props.code);
     setTimeout(() => copied.value = false, 2000);
 }
-<\/script>
+<script>
 
 <template>
     <div class="flex rounded-md w-full h-full bg-slate-800 text-white p-8 relative">
@@ -80,14 +80,15 @@ function copy() {
 <template>
   <div class="flex flex-col grow">
     <div class="flex flex-col mb-4 text-xl">
-      <h2 class="text-5xl font-light mb-4">Code Block</h2>
+      <h2 class="text-5xl font-light mb-4">Code block</h2>
       <div class="flex flex-col space-y-2">
         <span>A Vue SFC to create a code-block give a string</span>
         <span>
           The component includes a copy button and feedback animation to copy the given code to the
           user's clipboard. In the future it would be nice to add syntax colour styles so the code
-          stands out better. It would also be good to add customizeable colours.
+          stands out better.
         </span>
+        <span>It would be nice to add syntax highlighting in the future.</span>
         <div class="flex flex-row space-x-2 py-4">
           <span>Dependencies:</span>
           <div v-if="dependencies.length">
