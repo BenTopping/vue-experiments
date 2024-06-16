@@ -74,12 +74,16 @@ function copy() {
 </template>
 
 <style scoped>
-.slide-up-enter-active,
+.slide-up-enter-active {
+  transition: all 0.15s ease-out;
+}
 .slide-up-leave-active {
   transition: all 0.15s ease-out;
 }
-
-.slide-up-enter-from,
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(-20px) translateX(50%);
+}
 .slide-up-leave-to {
   opacity: 0;
 }

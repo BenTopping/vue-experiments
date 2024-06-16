@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CodeBlock from '../components/experiments/CodeBlock.vue'
+import IconScience from '@/components/icons/IconScience.vue'
 interface IDependency {
   name: string
   address: string
@@ -82,13 +83,12 @@ function copy() {
     <div class="flex flex-col mb-4 text-xl">
       <h2 class="text-5xl font-light mb-4">Code block</h2>
       <div class="flex flex-col space-y-2">
-        <span>A Vue SFC to create a code-block give a string</span>
+        <span>A Vue SFC to create a code-block given a string</span>
         <span>
           The component includes a copy button and feedback animation to copy the given code to the
           user's clipboard. In the future it would be nice to add syntax colour styles so the code
           stands out better.
         </span>
-        <span>It would be nice to add syntax highlighting in the future.</span>
         <div class="flex flex-row space-x-2 py-4">
           <span>Dependencies:</span>
           <div v-if="dependencies.length">
@@ -108,7 +108,14 @@ function copy() {
         </div>
       </div>
     </div>
-    <div class="flex grow justify-center items-center w-full p-8 rounded-md bg-gray-200">
+    <div class="flex flex-row">
+      <button class="py-2 px-6 bg-gray-200 rounded-t-lg cursor-pointer">
+        <IconScience />
+      </button>
+    </div>
+    <div
+      class="flex grow justify-center items-center w-full p-8 rounded-md rounded-tl-none bg-gray-200"
+    >
       <CodeBlock :code="codeBlockString" />
     </div>
   </div>
