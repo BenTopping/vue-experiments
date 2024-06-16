@@ -1,5 +1,14 @@
 <script setup lang="ts">
-defineProps({ modelValue: String })
+import { type PropType } from 'vue'
+import type { Component } from 'vue'
+
+defineProps({
+  modelValue: String,
+  components: {
+    type: Object as PropType<Record<string, { component: Component; name: string }>>,
+    required: true
+  }
+})
 
 const emit = defineEmits(['update:modelValue'])
 
@@ -11,6 +20,14 @@ function clickView(view: string) {
 <template>
   <aside class="grow min-h-full border-r-2 pr-4 space-y-2">
     <button
+      v-for="(component, key) in components"
+      :key="key"
+      class="flex rounded-md bg-gray-100 w-64 text-xl p-4 select-none cursor-pointer hover:text-white hover:bg-black transition duration-75"
+      @click="clickView(key)"
+    >
+      {{ component.name }}
+    </button>
+    <!-- <button
       class="flex rounded-md bg-gray-100 w-64 text-xl p-4 select-none cursor-pointer hover:text-white hover:bg-black transition duration-75"
       @click="clickView('FlipClockView')"
     >
@@ -21,6 +38,6 @@ function clickView(view: string) {
       @click="clickView('CodeBlockView')"
     >
       Code block
-    </button>
+    </button> -->
   </aside>
 </template>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import FlipClock from '../components/experiments/FlipClock.vue'
-import CodeBlock from '../components/experiments/CodeBlock.vue'
-import IconCodeBracket from '../components/icons/IconCodeBracket.vue'
+import FlipClock from '@/components/experiments/FlipClock.vue'
+import CodeBlock from '@/components/experiments/CodeBlock.vue'
+import IconCodeBracket from '@/components/icons/IconCodeBracket.vue'
 import IconScience from '@/components/icons/IconScience.vue'
 interface IDependency {
   name: string
