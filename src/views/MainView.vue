@@ -5,6 +5,7 @@ import SideBar from '@/components/SideBar.vue'
 import FlipClockView from './FlipClockView.vue'
 import CodeBlockView from './CodeBlockView.vue'
 import SignatureBoxView from './SignatureBoxView.vue'
+import TerminalView from './TerminalView.vue'
 
 const components: Record<string, { component: Component; name: string }> = {
   FlipClockView: {
@@ -18,6 +19,10 @@ const components: Record<string, { component: Component; name: string }> = {
   SignatureBoxView: {
     component: SignatureBoxView,
     name: 'Signature box'
+  },
+  TerminalView: {
+    component: TerminalView,
+    name: 'Terminal'
   }
 }
 let selectedView = ref('FlipClockView')

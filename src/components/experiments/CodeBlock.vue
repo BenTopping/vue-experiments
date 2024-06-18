@@ -27,7 +27,7 @@ function copy() {
       </div>
     </transition>
     <div class="absolute right-4 top-4">
-      <button class="hover:bg-slate-800 p-4 h-full rounded-md" @click="copy">
+      <button class="hover:bg-slate-600 p-4 h-full rounded-md shadow-lg bg-slate-700" @click="copy">
         <!-- Clipboard Tick Icon -->
         <svg
           v-show="copied"
