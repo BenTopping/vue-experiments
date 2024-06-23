@@ -27,17 +27,5 @@ function clickView(view: string) {
     >
       {{ component.name }}
     </button>
-    <!-- <button
-      class="flex rounded-md bg-gray-100 w-64 text-xl p-4 select-none cursor-pointer hover:text-white hover:bg-black transition duration-75"
-      @click="clickView('FlipClockView')"
-    >
-      Flip clock
-    </button>
-    <button
-      class="flex rounded-md bg-gray-100 w-64 text-xl p-4 select-none cursor-pointer hover:text-white hover:bg-black transition duration-75"
-      @click="clickView('CodeBlockView')"
-    >
-      Code block
-    </button> -->
   </aside>
 </template>

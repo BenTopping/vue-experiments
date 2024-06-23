@@ -98,7 +98,7 @@ function saveCanvas() {
 </script>
 
 <template>
-  <div class="flex flex-col grow">
+  <div class="flex flex-col h-full w-full">
     <div class="flex flex-col mb-4 text-xl">
       <h2 class="text-5xl font-light mb-4">Signature box</h2>
       <div class="flex flex-col space-y-2">

@@ -5,7 +5,7 @@ import SideBar from '@/components/SideBar.vue'
 import FlipClockView from './FlipClockView.vue'
 import CodeBlockView from './CodeBlockView.vue'
 import SignatureBoxView from './SignatureBoxView.vue'
-import TerminalView from './TerminalView.vue'
+import MockTerminalView from './MockTerminalView.vue'
 
 const components: Record<string, { component: Component; name: string }> = {
   FlipClockView: {
@@ -21,17 +21,17 @@ const components: Record<string, { component: Component; name: string }> = {
     name: 'Signature box'
   },
   TerminalView: {
-    component: TerminalView,
-    name: 'Terminal'
+    component: MockTerminalView,
+    name: 'Mock terminal'
   }
 }
 let selectedView = ref('FlipClockView')
 </script>
 
 <template>
-  <div class="flex grow min-h-full py-4 w-full">
+  <div class="flex py-4 w-full h-full">
     <SideBar v-model="selectedView" :components="components" />
-    <div class="flex flex-col px-4 w-full">
+    <div class="flex flex-col px-4 w-full h-full">
       <component :is="components[selectedView].component" />
     </div>
   </div>
