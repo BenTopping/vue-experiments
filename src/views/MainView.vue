@@ -30,9 +30,9 @@ let selectedView = ref('FlipClockView')
 
 <template>
   <div class="flex py-4 w-full h-full">
-    <SideBar v-model="selectedView" :components="components" />
-    <div class="flex flex-col px-4 w-full h-full">
-      <component :is="components[selectedView].component" />
-    </div>
+      <SideBar v-model="selectedView" :components="components" />
+      <div class="flex flex-col px-4 w-full h-full">
+        <component :is="components[selectedView].component" />
+      </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
+<script async setup lang="ts">
+import { ref, onMounted } from 'vue'
+import { codeToHtml } from 'shiki'
 const copied = ref(false)
 const props = defineProps({
   code: {
@@ -8,26 +8,38 @@ const props = defineProps({
     default: ''
   }
 })
-
+const highlightedCode = ref('')
 function copy() {
   copied.value = true
   navigator.clipboard.writeText(props.code)
   setTimeout(() => (copied.value = false), 2000)
 }
+
+onMounted(async () => {
+  highlightedCode.value = await codeToHtml(props.code, {
+    lang: 'typescript',
+    theme: 'vitesse-black'
+  })
+
+  return {
+    highlightedCode
+  }
+})
+
 </script>
 
 <template>
-  <div class="flex rounded-md w-full h-full bg-slate-800 text-white p-8 relative">
+  <div class="flex rounded-md w-full h-full bg-black text-white p-8 relative overflow-x-scroll">
     <transition name="slide-up">
       <div
         v-show="copied"
-        class="absolute text-xl right-1/2 translate-x-1/2 top-4 rounded-full bg-slate-600 items-center px-6 p-2"
+        class="absolute text-xl right-1/2 translate-x-1/2 top-4 rounded-full bg-gray-600 items-center px-6 p-2"
       >
         <span>Copied</span>
       </div>
     </transition>
     <div class="absolute right-4 top-4">
-      <button class="hover:bg-slate-600 p-4 h-full rounded-md shadow-lg bg-slate-700" @click="copy">
+      <button class="hover:bg-gray-600 p-4 h-full rounded-md shadow-lg bg-gray-700" @click="copy">
         <!-- Clipboard Tick Icon -->
         <svg
           v-show="copied"
@@ -67,9 +79,7 @@ function copy() {
         </svg>
       </button>
     </div>
-    <pre class="w-full">
-      {{ props.code }}
-    </pre>
+    <div class="w-full" v-html="highlightedCode"></div>
   </div>
 </template>
 

@@ -5,7 +5,12 @@ interface IDependency {
   name: string
   address: string
 }
-const dependencies: IDependency[] = []
+const dependencies: IDependency[] = [
+  {
+    name: 'Shiki',
+    address: 'https://shiki.style/'
+  }
+]
 
 const codeBlockString: string = `
 <script setup lang="ts">
@@ -86,16 +91,15 @@ function copy() {
         <span>A Vue SFC to create a code-block given a string</span>
         <span>
           The component includes a copy button and feedback animation to copy the given code to the
-          user's clipboard. In the future it would be nice to add syntax colour styles so the code
-          stands out better.
+          user's clipboard. It uses Shiki for syntax highlighting.
         </span>
-        <div class="flex flex-row space-x-2 py-4">
-          <span>Dependencies:</span>
+        <div class="flex flex-row space-x-2 py-4 items-center">
+          <span class="py-2">Dependencies:</span>
           <div v-if="dependencies.length">
             <a
               v-for="dep in dependencies"
               :key="dep.name"
-              class="p-2 px-4 bg-gray-200 rounded-full mx-1 hover:text-white hover:bg-black transition"
+              class="py-2 px-6 bg-gray-200 rounded-full hover:text-white hover:bg-black transition"
               :href="dep.address"
               target="_blank"
             >
