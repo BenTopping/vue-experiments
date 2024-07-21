@@ -25,7 +25,6 @@ onMounted(async () => {
     highlightedCode
   }
 })
-
 </script>
 
 <template>

@@ -1,31 +1,22 @@
 <script setup lang="ts">
-import { type PropType } from 'vue'
-import type { Component } from 'vue'
+import { useRouter } from 'vue-router'
 
-defineProps({
-  modelValue: String,
-  components: {
-    type: Object as PropType<Record<string, { component: Component; name: string }>>,
-    required: true
-  }
-})
-
-const emit = defineEmits(['update:modelValue'])
-
-function clickView(view: string) {
-  emit('update:modelValue', view)
-}
+const router = useRouter()
+const routeNames = router
+  .getRoutes()
+  .map((route: { name: any }) => route.name)
+  .filter((name: any) => name != 'main')
 </script>
 
 <template>
-  <aside class="grow min-h-full border-r-2 pr-4 space-y-2">
+  <aside class="flex flex-col min-h-full border-r-2 pr-4 space-y-2">
     <button
-      v-for="(component, key) in components"
+      v-for="(route, key) in routeNames"
       :key="key"
       class="flex rounded-md bg-gray-100 w-64 text-xl p-4 select-none cursor-pointer hover:text-white hover:bg-black transition duration-75"
-      @click="clickView(key)"
+      @click="router.push({ name: route })"
     >
-      {{ component.name }}
+      {{ route }}
     </button>
   </aside>
 </template>

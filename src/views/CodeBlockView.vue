@@ -84,7 +84,7 @@ function copy() {
 </script>
 
 <template>
-  <div class="flex flex-col grow">
+  <div class="flex flex-col">
     <div class="flex flex-col mb-4 text-xl">
       <h2 class="text-5xl font-light mb-4">Code block</h2>
       <div class="flex flex-col space-y-2">
@@ -118,7 +118,7 @@ function copy() {
       </button>
     </div>
     <div
-      class="flex grow justify-center items-center w-full p-8 rounded-md rounded-tl-none bg-gray-200"
+      class="flex justify-center items-center max-w-full p-8 rounded-md rounded-tl-none bg-gray-200"
     >
       <CodeBlock :code="codeBlockString" />
     </div>
