@@ -38,7 +38,7 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(dateInterval)
 })
-<\/\script>
+<\/script>
 
 <template>
   <div
@@ -146,7 +146,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col grow">
+  <div class="flex flex-col w-full h-full">
     <div class="flex flex-col mb-4 text-xl">
       <h2 class="text-5xl font-light mb-4">Flip clock</h2>
       <div class="flex flex-col space-y-2">
@@ -194,7 +194,7 @@ onUnmounted(() => {
       </button>
     </div>
     <div
-      class="flex flex-col grow justify-center items-center w-full p-8 rounded-md rounded-tl-none bg-gray-200"
+      class="flex flex-col grow h-full justify-center items-center w-full p-8 rounded-md rounded-tl-none bg-gray-200"
     >
       <FlipClock v-show="currentTab == 'experiment'" />
       <CodeBlock v-show="currentTab == 'code'" :code="codeBlockString" />

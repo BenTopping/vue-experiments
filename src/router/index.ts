@@ -4,6 +4,7 @@ import CodeBlockView from '@/views/CodeBlockView.vue'
 import FlipClockView from '@/views/FlipClockView.vue'
 import SignatureBoxView from '@/views/SignatureBoxView.vue'
 import MockTerminalView from '@/views/MockTerminalView.vue'
+import MultiSelectViewVue from '@/views/MultiSelectView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/mock_terminal',
       name: 'Mock terminal',
       component: MockTerminalView
+    },
+    {
+      path: '/multi_select',
+      name: 'Multi select',
+      component: MultiSelectViewVue
     }
   ]
 })

@@ -28,7 +28,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="flex rounded-md w-full h-full bg-black text-white p-8 relative overflow-x-scroll">
+  <div class="flex rounded-md w-full h-full bg-black text-white p-8 relative">
     <transition name="slide-up">
       <div
         v-show="copied"
@@ -78,7 +78,7 @@ onMounted(async () => {
         </svg>
       </button>
     </div>
-    <div class="w-full" v-html="highlightedCode"></div>
+    <div v-html="highlightedCode"></div>
   </div>
 </template>
 
