@@ -46,7 +46,7 @@ onMounted(async () => {
 <\/script>
 
 <template>
-  <div class="flex rounded-md w-full h-full bg-black text-white p-8 relative">
+  <div class="flex rounded-md w-full h-full bg-black text-white p-8 relative overflow-x-scroll">
     <div v-if="!codeLoaded" class="text-xl">Loading...</div>
     <div v-else>
       <transition name="slide-up">
@@ -158,7 +158,7 @@ onMounted(async () => {
       </button>
     </div>
     <div
-      class="flex justify-center items-center max-w-full p-8 rounded-md rounded-tl-none bg-gray-200"
+      class="flex justify-center items-center p-8 rounded-md rounded-tl-none bg-gray-200"
     >
       <CodeBlock :code="codeBlockString" />
     </div>

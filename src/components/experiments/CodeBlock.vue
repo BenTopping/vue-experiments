@@ -31,7 +31,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="w-full h-full rounded-md bg-black text-white p-8 relative">
+  <div class="w-full h-full rounded-md bg-black text-white p-8 relative overflow-x-scroll">
     <div v-if="!codeLoaded" class="text-xl">Loading...</div>
     <div v-else>
       <transition name="slide-up">

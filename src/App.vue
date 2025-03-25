@@ -7,9 +7,9 @@ import SideBar from '@/components/SideBar.vue'
   <div class="flex flex-col grow min-h-svh p-8 max-w-swh">
     <div class="flex flex-col grow w-full h-full">
       <NavBar />
-      <div class="flex grow py-4 h-full">
+      <div class="flex grow py-4 w-full h-full max-w-full">
         <SideBar />
-        <div class="min-h-full px-4 w-full mx-auto">
+        <div class="min-h-full px-4 w-full overflow-hidden">
           <router-view v-slot="{ Component, route }">
             <transition :name="route.meta.transition" mode="out-in">
               <component :is="Component" />
