@@ -21,19 +21,14 @@ function removeFilter(filter: string) {
     <div
       class="flex flex-row grow bg-white rounded-md border-gray-200 border-2 hover:border-blue-600 transition-all"
     >
-      <div class="flex flex-row w-full flex-wrap px-4 align-middle">
+      <div class="flex flex-row w-full flex-wrap px-4 align-middle py-2 gap-x-2">
         <div
           v-for="filter in filters"
           :key="filter"
-          class="bg-gray-200 px-4 py-2 rounded-md items-center m-1"
+          class="flex bg-gray-600 text-xl px-4 py-2 rounded-md text-white items-center"
         >
           <span class="pr-2">{{ filter }}</span>
-          <button
-            class="border-l-2 border-gray-400 text-gray-400 pl-2"
-            @click="removeFilter(filter)"
-          >
-            X
-          </button>
+          <button class="pl-2 items-center text-sm" @click="removeFilter(filter)">X</button>
         </div>
         <input
           v-model="inputValue"
