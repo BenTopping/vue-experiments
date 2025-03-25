@@ -157,9 +157,7 @@ onMounted(async () => {
         <IconScience />
       </button>
     </div>
-    <div
-      class="flex justify-center items-center p-8 rounded-md rounded-tl-none bg-gray-200"
-    >
+    <div class="flex justify-center items-center p-8 rounded-md rounded-tl-none bg-gray-200">
       <CodeBlock :code="codeBlockString" />
     </div>
   </div>

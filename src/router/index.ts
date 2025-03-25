@@ -4,7 +4,8 @@ import CodeBlockView from '@/views/CodeBlockView.vue'
 import FlipClockView from '@/views/FlipClockView.vue'
 import SignatureBoxView from '@/views/SignatureBoxView.vue'
 import MockTerminalView from '@/views/MockTerminalView.vue'
-import MultiSelectViewVue from '@/views/MultiSelectView.vue'
+import MultiSelectView from '@/views/MultiSelectView.vue'
+import NewtonsCradleView from '@/views/NewtonsCradleView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,7 +38,12 @@ const router = createRouter({
     {
       path: '/multi_select',
       name: 'Multi select',
-      component: MultiSelectViewVue
+      component: MultiSelectView
+    },
+    {
+      path: '/newtons_cradle',
+      name: "Newton's cradle",
+      component: NewtonsCradleView
     }
   ]
 })
