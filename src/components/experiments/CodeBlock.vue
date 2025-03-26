@@ -97,10 +97,10 @@ onMounted(async () => {
 }
 .slide-up-enter-from {
   opacity: 0;
-  transform: translateY(-20px) translateX(50%);
+  transform: translateY(-20px);
 }
 .slide-up-leave-to {
   opacity: 0;
-  transform: translateY(-20px) translateX(50%);
+  transform: translateY(-20px);
 }
 </style>

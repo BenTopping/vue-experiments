@@ -40,7 +40,7 @@ function removeFilter(filter: string) {
           <input
             v-model="inputValue"
             @keydown.enter="addFilter()"
-            class="flex outline-none w-full"
+            class="flex outline-hidden w-full"
             placeholder="Type to filter..."
           />
           <!-- Search Icon -->
