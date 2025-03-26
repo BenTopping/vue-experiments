@@ -12,10 +12,10 @@ const props = defineProps({
   }
 })
 
-let isDrawing = ref(false)
-let x = ref(0)
-let y = ref(0)
-let canvas = ref<InstanceType<typeof HTMLCanvasElement> | null>(null)
+const isDrawing = ref(false)
+const x = ref(0)
+const y = ref(0)
+const canvas = ref<InstanceType<typeof HTMLCanvasElement> | null>(null)
 
 function startDrawing(event: MouseEvent) {
   isDrawing.value = true

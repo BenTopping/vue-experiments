@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CodeBlock from '@/components/experiments/CodeBlock.vue'
 import IconScience from '@/components/icons/IconScience.vue'
-interface IDependency {
+type IDependency = {
   name: string
   address: string
 }

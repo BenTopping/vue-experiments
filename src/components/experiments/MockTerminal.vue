@@ -98,9 +98,9 @@ onMounted(() => {
         <span class="text-nowrap">{{ prompt }}</span>
         <input
           ref="promptInput"
+          v-model="command.input"
           class="border-none p-0 bg-transparent outline-hidden grow"
           type="text"
-          v-model="command.input"
           placeholder="Type 'help' to get started"
           @keydown.enter="addCommand"
         />

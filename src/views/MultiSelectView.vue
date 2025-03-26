@@ -108,7 +108,6 @@ function removeFilter(filter: string) {
     </div>
     <div class="flex flex-row">
       <button
-        @click="currentTab = 'experiment'"
         :class="`py-2 px-6 ${
           currentTab == 'experiment' ? 'bg-gray-200' : 'bg-gray-300'
         } rounded-t-lg cursor-pointer`"
@@ -116,10 +115,10 @@ function removeFilter(filter: string) {
         <IconScience />
       </button>
       <button
-        @click="currentTab = 'code'"
         :class="`p-2 px-6 rounded-t-lg ${
           currentTab == 'code' ? 'bg-gray-200' : 'bg-gray-300'
         } cursor-pointer`"
+        @click="currentTab = 'code'"
       >
         <IconCodeBracket />
       </button>

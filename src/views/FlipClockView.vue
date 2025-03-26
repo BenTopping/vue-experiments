@@ -15,8 +15,8 @@ const codeBlockString: string = `
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-let date: any = ref(new Date())
-let dateInterval: any = null
+const date = ref(new Date())
+let dateInterval: number | undefined = undefined
 
 const seconds = computed(() => padZero(date.value.getSeconds()))
 const minutes = computed(() => padZero(date.value.getMinutes()))
@@ -177,18 +177,18 @@ onUnmounted(() => {
     </div>
     <div class="flex flex-row">
       <button
-        @click="currentTab = 'experiment'"
         :class="`py-2 px-6 ${
           currentTab == 'experiment' ? 'bg-gray-200' : 'bg-gray-300'
         } rounded-t-lg cursor-pointer`"
+        @click="currentTab = 'experiment'"
       >
         <IconScience />
       </button>
       <button
-        @click="currentTab = 'code'"
         :class="`p-2 px-6 rounded-t-lg ${
           currentTab == 'code' ? 'bg-gray-200' : 'bg-gray-300'
         } cursor-pointer`"
+        @click="currentTab = 'code'"
       >
         <IconCodeBracket />
       </button>

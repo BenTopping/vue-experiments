@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-let date: any = ref(new Date())
-let dateInterval: any = null
+const date = ref(new Date())
+let dateInterval: number | undefined = undefined
 
 const seconds = computed(() => padZero(date.value.getSeconds()))
 const minutes = computed(() => padZero(date.value.getMinutes()))

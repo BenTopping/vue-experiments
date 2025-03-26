@@ -25,9 +25,9 @@ function removeFilter(filter: string) {
         <div class="flex flex-row w-full">
           <input
             v-model="inputValue"
-            @keydown.enter="addFilter()"
             class="flex outline-hidden w-full"
             placeholder="Type to filter..."
+            @keydown.enter="addFilter()"
           />
           <!-- Search Icon -->
           <svg

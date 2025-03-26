@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import type { RouteRecordNormalized } from 'vue-router'
 
 const router = useRouter()
 const routeNames = router
   .getRoutes()
-  .map((route: { name: any }) => route.name)
-  .filter((name: any) => name != 'main')
+  .map((route: RouteRecordNormalized) => route.name)
+  .filter((name) => name != 'main')
 </script>
 
 <template>
