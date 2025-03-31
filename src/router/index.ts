@@ -44,7 +44,8 @@ const router = createRouter({
       path: '/newtons_cradle',
       name: "Newton's cradle",
       component: NewtonsCradleView
-    }
+    },
+    { path: '/:pathMatch(.*)', component: MainView } // Fallback route
   ]
 })
 
