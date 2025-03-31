@@ -132,6 +132,7 @@ onMounted(async () => {
         <span>
           The component includes a copy button and feedback animation to copy the given code to the
           user's clipboard. It uses Shiki for syntax highlighting.
+          One caveat is that it uses v-html to render the highlighted code, which can be a security risk if the string is not sanitized.
         </span>
         <div class="flex flex-row space-x-2 py-4 items-center">
           <span class="py-2">Dependencies:</span>
