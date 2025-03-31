@@ -11,7 +11,7 @@ import SideBar from '@/components/SideBar.vue'
         <SideBar />
         <div class="min-h-full px-4 w-full overflow-hidden">
           <router-view v-slot="{ Component, route }">
-            <transition :name="route.meta.transition" mode="out-in">
+            <transition :name="route.meta.transition as string | undefined" mode="out-in">
               <component :is="Component" />
             </transition>
           </router-view>
