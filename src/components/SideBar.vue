@@ -6,7 +6,7 @@ const router = useRouter()
 const routeNames = router
   .getRoutes()
   .map((route: RouteRecordNormalized) => route.name)
-  .filter((name) => name != 'main')
+  .filter((name) => name != 'main' && name != 'Not found')
 </script>
 
 <template>
