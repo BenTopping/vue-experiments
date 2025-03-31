@@ -46,8 +46,22 @@ onMounted(async () => {
 <\/script>
 
 <template>
-  <div class="flex rounded-md w-full h-full bg-black text-white p-8 relative overflow-x-scroll">
-    <div v-if="!codeLoaded" class="text-xl">Loading...</div>
+  <div class="w-full h-full rounded-md bg-black text-white p-8 relative overflow-x-scroll">
+    <div v-if="!codeLoaded" class="flex flex-col w-full items-center text-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="40"
+        viewBox="0 -960 960 960"
+        width="40"
+        fill="#4a5565"
+        class="animate-pulse"
+      >
+        <path
+          d="M336-240 96-480l240-240 51 51-189 189 189 189-51 51Zm288 0-51-51 189-189-189-189 51-51 240 240-240 240Z"
+        />
+      </svg>
+      <span class="text-gray-600 font-light text-center">Loading code</span>
+    </div>
     <div v-else>
       <transition name="slide-up">
         <div
@@ -107,19 +121,21 @@ onMounted(async () => {
 .slide-up-enter-active {
   transition: all 0.15s ease-out;
 }
+
 .slide-up-leave-active {
   transition: all 0.15s ease-out;
 }
+
 .slide-up-enter-from {
   opacity: 0;
   transform: translateY(-20px);
 }
+
 .slide-up-leave-to {
   opacity: 0;
   transform: translateY(-20px);
 }
 </style>
-
 `
 </script>
 
@@ -131,8 +147,9 @@ onMounted(async () => {
         <span>A Vue SFC to create a code-block given a string</span>
         <span>
           The component includes a copy button and feedback animation to copy the given code to the
-          user's clipboard. It uses Shiki for syntax highlighting.
-          One caveat is that it uses v-html to render the highlighted code, which can be a security risk if the string is not sanitized.
+          user's clipboard. It uses Shiki for syntax highlighting. One caveat is that it uses v-html
+          to render the highlighted code, which can be a security risk if the string is not
+          sanitized.
         </span>
         <div class="flex flex-row space-x-2 py-4 items-center">
           <span class="py-2">Dependencies:</span>
