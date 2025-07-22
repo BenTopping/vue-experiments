@@ -6,6 +6,7 @@ import SignatureBoxView from '@/views/SignatureBoxView.vue'
 import MockTerminalView from '@/views/MockTerminalView.vue'
 import MultiSelectView from '@/views/MultiSelectView.vue'
 import NewtonsCradleView from '@/views/NewtonsCradleView.vue'
+import BallPitView from '@/views/BallPitView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: '/newtons_cradle',
       name: "Newton's cradle",
       component: NewtonsCradleView
+    },
+    {
+      path: '/ball_pit',
+      name: 'Ball pit',
+      component: BallPitView
     },
     {
       path: '/:pathMatch(.*)',

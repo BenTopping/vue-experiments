@@ -111,6 +111,7 @@ function removeFilter(filter: string) {
         :class="`py-2 px-6 ${
           currentTab == 'experiment' ? 'bg-gray-200' : 'bg-gray-300'
         } rounded-t-lg cursor-pointer`"
+        @click="currentTab = 'experiment'"
       >
         <IconScience />
       </button>

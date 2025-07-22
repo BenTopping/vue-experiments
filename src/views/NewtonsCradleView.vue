@@ -85,7 +85,7 @@ const codeBlockString: string = `
 <template>
   <div class="flex flex-col h-full w-full">
     <div class="flex flex-col mb-4 text-xl">
-      <h2 class="text-5xl font-light mb-4">Newton's Cradle</h2>
+      <h2 class="text-5xl font-light mb-4">Newton's cradle</h2>
       <div class="flex flex-col space-y-2">
         <span>Mimicking conservation of momentum with CSS animations.</span>
         <span>
