@@ -47,9 +47,7 @@ const setMonth = (month: number) => {
   if (currentDay.value !== null && currentDays.value.includes(currentDay.value)) return
   currentDay.value = null
 }
-const years = () => {
-  return Array.from({ length: 100 }, (_, i) => currentYear.value - i)
-}
+const years = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i)
 <\/script>
 
 <template>
@@ -82,7 +80,7 @@ const years = () => {
               v-model="currentYear"
               class="w-full text-sm border border-gray-400 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-gray-600 hover:border-gray-600 shadow-sm focus:shadow-md appearance-none cursor-pointer"
             >
-              <option v-for="year in years()" :key="year" :value="year">{{ year }}</option>
+              <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
             </select>
             <svg
               xmlns="http://www.w3.org/2000/svg"
