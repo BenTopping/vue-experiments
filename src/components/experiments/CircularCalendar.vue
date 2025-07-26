@@ -30,7 +30,7 @@ const currentDate = computed(() => {
 })
 const setMonth = (month: number) => {
   currentMonth.value = month
-  if (currentDays.value.includes(currentDay.value)) return
+  if (currentDay.value !== null && currentDays.value.includes(currentDay.value)) return
   currentDay.value = null
 }
 const years = () => {
