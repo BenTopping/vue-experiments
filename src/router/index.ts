@@ -7,6 +7,7 @@ import MockTerminalView from '@/views/MockTerminalView.vue'
 import MultiSelectView from '@/views/MultiSelectView.vue'
 import NewtonsCradleView from '@/views/NewtonsCradleView.vue'
 import BallPitView from '@/views/BallPitView.vue'
+import CircularCalendarView from '@/views/CircularCalendarView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +51,11 @@ const router = createRouter({
       path: '/ball_pit',
       name: 'Ball pit',
       component: BallPitView
+    },
+    {
+      path: '/circular_calendar',
+      name: 'Circular calendar',
+      component: CircularCalendarView
     },
     {
       path: '/:pathMatch(.*)',

@@ -146,8 +146,8 @@ onMounted(() => {
           <a href="https://brm.io/matter-js/" target="_blank" class="font-bold"> Matter.js </a>
         </span>
         <span>
-          The ball pit contains 50 randomly size balls and it is interactive using the realistic physics from matter.js. Drag and throw the
-          balls around to see it in action.
+          The ball pit contains 50 randomly sized balls and it is interactive using the realistic
+          physics from matter.js. Drag and throw the balls around to see it in action.
         </span>
         <div class="flex flex-row space-x-2 py-4">
           <span>Dependencies:</span>
