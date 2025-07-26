@@ -15,8 +15,8 @@ const codeBlockString: string = `
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 const currentMonth = ref<number>(1)
-const currentDay = ref<number>(1)
-const currentYear = ref<Date>(new Date().getFullYear())
+const currentDay = ref<number | null>(1)
+const currentYear = ref<number>(new Date().getFullYear())
 const months: string[] = [
   'January',
   'February',
@@ -44,7 +44,7 @@ const currentDate = computed(() => {
 })
 const setMonth = (month: number) => {
   currentMonth.value = month
-  if (currentDays.includes(currentDay.value)) return
+  if (currentDays.value.includes(currentDay.value)) return
   currentDay.value = null
 }
 const years = () => {
